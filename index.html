@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="images/favicon-32x32.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <title>Interactive Card</title>
+</head>
+<body>
+    
+    <div id="background">
+        <img src="images/desktop/bg-main-desktop.png" alt="">
+    </div>
+    
+    <div id="containerCard">
+        <div>
+            <img id="frontCard" class="card" src="images/bg-card-front.png" alt="">
+            <div id="contentsFront">
+                <div class="balls">
+                    <div id="whiteBall"></div>
+                    <div id="borderWhiteBall"></div>
+                </div>
+                <div class="cardNumber">
+                    <h2>0000 0000 0000 0000</h2>
+                </div>
+                <div class="name_date">
+                    <p>YOUR NAME</p>
+                    <p>00/00</p>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <img id="backCard" class="card" src="images/bg-card-back.png" alt="">
+            <p>000</p>
+        </div>
+    </div>
+
+    <div id="containerDiv">
+        <form id="container">
+            <p>CARDHOLDER NAME</p>
+            <input type="text" name="form" id="cardholder">
+            <label for="cardholder">e.g. Renato Guimarães</label>
+
+            <p>CARD NUMBER</p>
+            <input type="number" name="form" id="cardNumber">
+            <label for="cardNumber">e.g. 1234 5678 9123 000</label>
+
+            <p>EXP. DATE (MM/YY)</p>
+            <input type="number" name="form" id="mm">
+            <label for="mm">MM</label>
+            <input type="number" name="form" id="yy">
+            <label for="yy">YY</label>
+
+            <p>CVC</p>
+            <input type="number" name="form" id="cvc">
+            <label for="cvc">e.g. 123</label>
+        </form>
+
+        <div id="buttonConfirm">
+            <input type="submit" value="Confirm">
+        </div>
+    </div> 
+
+<script src="code.js"></script>
+</body>
+</html>
