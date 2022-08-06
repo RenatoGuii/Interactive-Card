@@ -15,54 +15,45 @@
     </div>
     
     <div id="containerCard">
-        <div>
-            <img id="frontCard" class="card" src="images/bg-card-front.png" alt="">
-            <div id="contentsFront">
+        <div id="frontCard" class="cards">
                 <div class="balls">
                     <div id="whiteBall"></div>
                     <div id="borderWhiteBall"></div>
                 </div>
-                <div class="cardNumber">
+                <div id="cardNumber">
                     <h2>0000 0000 0000 0000</h2>
                 </div>
-                <div class="name_date">
+                <div id="name_date">
                     <p>YOUR NAME</p>
                     <p>00/00</p>
-                </div>
             </div>
         </div>
 
-        <div>
-            <img id="backCard" class="card" src="images/bg-card-back.png" alt="">
-            <p>000</p>
+        <div id="backCard" class="cards">
+            <p id="cvcCard">000</p>
         </div>
     </div>
 
-    <div id="containerDiv">
-        <form id="container">
+    <section id="containerWhite">
+        <form id="containerForm">
             <p>CARDHOLDER NAME</p>
-            <input type="text" name="form" id="cardholder">
-            <label for="cardholder">e.g. Renato Guimarães</label>
+            <input type="text" name="form" id="cardholder" placeholder="e.g. Renato Guimarães">
 
             <p>CARD NUMBER</p>
-            <input type="number" name="form" id="cardNumber">
-            <label for="cardNumber">e.g. 1234 5678 9123 000</label>
+            <input type="text" name="form" id="cardNumberTxt" placeholder="e.g. 1234 5678 9123 0000">
 
             <p>EXP. DATE (MM/YY)</p>
             <input type="number" name="form" id="mm">
-            <label for="mm">MM</label>
             <input type="number" name="form" id="yy">
-            <label for="yy">YY</label>
 
             <p>CVC</p>
             <input type="number" name="form" id="cvc">
-            <label for="cvc">e.g. 123</label>
         </form>
 
         <div id="buttonConfirm">
             <input type="submit" value="Confirm">
         </div>
-    </div> 
+    </section> 
 
 <script src="code.js"></script>
 </body>

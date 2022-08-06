@@ -26,6 +26,7 @@ body {
     display: flex;
     font-family: var(--fontMain);
     font-size: 12px;
+    overflow-y: hidden;
 }
 
 
@@ -33,80 +34,126 @@ body {
 #background img{
     display: inline;
     height: 100vh;
-    width: 125%;
+    width: 35vw;
 }
 
 
 
-#containerCard .card {
+#containerCard .cards {
     position: absolute;
-    max-height: 16vw;
-    min-height: 130px
+    height: 15vw;
+    min-height: 101px;
+    width: 27vw;
+    min-width: 182px;
+    border-radius: 5px;
 }
-#containerCard #frontCard {
-    display: flex;
-    flex-grow: 1;
-    top: 20%;
-    left: 10%;
-    max-width: 100em;
-
-}
-#containerCard #backCard {
-    display: flex;
-}
-#containerCard #contentsFront {
-    position: absolute;
-    margin: 21vh 0px 0px -35vh;
-    color: white;
-    font-size: 1.1vw;
-    letter-spacing: 3px;
-}
-#containerCard #contentsFront .balls {
-    display: flex;
-    margin-bottom: 45px;
-}
-#containerCard #contentsFront #whiteBall {
-    background-color: white;
-    border-radius: 100%;
-    width: 2em;
-    height: 2em;
-}
-#containerCard #contentsFront #borderWhiteBall {
-    background-color: transparent;
-    border: 1px solid white;
-    border-radius: 100%;
-    width: 0.7em;
-    height: 0.7em;
-    margin: 6px 0 0 8px;
-}
-#containerCard #containerFront .cardNumber {
-    max-width: 1vw;
-    flex-grow: 5;
-}
-#containerCard #contentsFront .name_date {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 22px;
-    font-size: 7.5px;
-    letter-spacing: 1px;
-}
-#containerCard #backCard {
-    top: 60%;
-    left: 16%;
-}
-
-
-
-#containerDiv {
+#frontCard {
     display: flex;
     flex-direction: column;
+    box-sizing: border-box;
+    background: url(images/bg-card-front.png) no-repeat;
+    background-size: cover;
+    top: 20%;
+    left: 15%;
+    padding: 1.5%;
 }
-#container {
+#frontCard .balls {
+    display: flex;
+    margin-bottom: 3.5vw;
+    align-items: center;
+}
+#frontCard #whiteBall {
+    background-color: var(--lightGrayishViolet);
+    border-radius: 100%;
+    width: 3vw;
+    height: 3vw;
+    margin-right: 4%;
+}
+#frontCard #borderWhiteBall {
+    background-color: transparent;
+    border: 1px solid var(--lightGrayishViolet);
+    border-radius: 100%;
+    width: 1vw;
+    height: 1vw;
+}
+#frontCard #cardNumber {
+    color: var(--lightGrayishViolet);
+    font-size: 1.2vw;
+    margin-bottom: 10%;
+    letter-spacing: 1px;
+}
+#frontCard #name_date {
+    display: flex;
+    justify-content: space-between;
+    color: var(--lightGrayishViolet);
+    font-size: 0.9vw;
+    letter-spacing: 1px;
+}
+
+#backCard {
+    background-image: url(images/bg-card-back.png);
+    top: 60%;
+    left: 20%;
+    box-sizing: border-box;
+    background-size: cover;
+}
+#backCard #cvcCard {
+    display: flex;
+    justify-content: right;
+    padding: 6.5vw 3vw 0 0;
+    font-size: 1.2vw;
+    color: var(--lightGrayishViolet);
+    font-weight: 500;
+}
+@media (min-width: 1017px) {
+    #containerCard .cards {
+        width: 274px;
+        height: 152px;
+    } 
+
+    /*AJEITAR O TAMANHO DESSES ELEMENTOS*/
+    #frontCard #whiteBall {
+
+    }
+    #frontCard #borderWhiteBall {
+
+    }
+    #frontCard #cardNumber {
+
+    }
+    #frontCard #name_date {
+
+    }
+    #backCard #cvcCard {
+        
+    }
+}
+
+
+
+#containerWhite {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+}
+#containerForm p {
+    color: var(--veryDarkViolet);
+    font-size: 10px;
+    font-weight: 500;
+}
+#containerForm {
     
 }
-#container input{
-    display: none;
+#containerForm input {
+    background-color: transparent;
+    border: 1px solid var(--lightGrayishViolet);
 }
-#container label {
-    background-color: black;
+
+
+
+    /*MOBILE*/
+
+@media (max-width: 682px) {
+
 }
