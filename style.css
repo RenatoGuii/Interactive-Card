@@ -26,12 +26,13 @@ body {
     display: flex;
     font-family: var(--fontMain);
     font-size: 12px;
-    overflow-y: hidden;
 }
 
 
 
-#background img{
+#background {
+    background: url(images/desktop/bg-main-desktop.png) no-repeat;
+    background-size: cover;
     display: inline;
     height: 100vh;
     width: 35vw;
@@ -55,11 +56,11 @@ body {
     background-size: cover;
     top: 20%;
     left: 15%;
-    padding: 1.5%;
+    padding: 1vw; !important
 }
 #frontCard .balls {
     display: flex;
-    margin-bottom: 3.5vw;
+    margin-bottom: 15%;
     align-items: center;
 }
 #frontCard #whiteBall {
@@ -105,27 +106,43 @@ body {
     color: var(--lightGrayishViolet);
     font-weight: 500;
 }
+
+    /*Keep Card Size*/
+
 @media (min-width: 1017px) {
     #containerCard .cards {
         width: 274px;
         height: 152px;
     } 
-
-    /*AJEITAR O TAMANHO DESSES ELEMENTOS*/
+    #frontCard {
+        padding: 11px;
+    }
     #frontCard #whiteBall {
-
+        height: 30.56px;
+        width: 30.56px;
     }
     #frontCard #borderWhiteBall {
-
+        height: 12.18px;
+        width: 12.18px;
     }
     #frontCard #cardNumber {
-
+        font-size: 12.2px;
     }
     #frontCard #name_date {
-
+        font-size: 9.1px;
     }
     #backCard #cvcCard {
-        
+        padding: 5.4em 2em 0 0;
+        font-size: 12.5px;
+    }
+}
+
+@media (max-height: 395px) {
+    #frontCard {
+        top: 77px;
+    }
+    #backCard {
+        top: 235px;
     }
 }
 
@@ -150,10 +167,10 @@ body {
     border: 1px solid var(--lightGrayishViolet);
 }
 
-
+/*COLOCAR MEDIA QUERY PRA ALTURA*/
 
     /*MOBILE*/
 
-@media (max-width: 682px) {
+@media (max-width: 682px)  () {
 
 }
