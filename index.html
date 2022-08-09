@@ -37,21 +37,20 @@
     <section id="containerWhite">
         <form id="containerForm">
             <p>CARDHOLDER NAME</p>
-            <input type="text" name="form" id="cardholder" placeholder="e.g. Renato Guimarães">
+            <input class="nameAndNumber" type="text" name="form" id="cardHolderTxt" placeholder="e.g. Renato Guimarães">
 
             <p>CARD NUMBER</p>
-            <input type="text" name="form" id="cardNumberTxt" placeholder="e.g. 1234 5678 9123 0000">
+            <input class="nameAndNumber" type="number" name="form" id="cardNumberTxt" placeholder="e.g. 1234 5678 9123 0000">
 
-            <p>EXP. DATE (MM/YY)</p>
-            <input type="number" name="form" id="mm">
-            <input type="number" name="form" id="yy">
+            <p>EXP. DATE (MM/YY) &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp CVC</p> 
+            <input  class="mm_yy_cvc" type="number" name="form" placeholder="MM" id="mm">
+            <input class="mm_yy_cvc" type="number" name="form" placeholder="YY" id="yy">
 
-            <p>CVC</p>
-            <input type="number" name="form" id="cvc">
+            <input class="mm_yy_cvc" type="number" name="form" id="cvc" placeholder="e.g. 123">
         </form>
 
-        <div id="buttonConfirm">
-            <input type="submit" value="Confirm">
+        <div>
+            <input id="buttonConfirm" type="submit" value="Confirm">
         </div>
     </section> 
 
