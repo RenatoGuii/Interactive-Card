@@ -282,8 +282,22 @@ body {
 
     /*MOBILE*/
 
-@media (max-width: 714px)  () {
-
+@media (max-width: 714px) {
+    #background {
+        order: 1;
+        background: url(images/mobile/bg-main-mobile.png) no-repeat;
+        background-size: cover;
+        height: 35vh;
+        width: 100vw;
+    }
+    #frontCard {
+        position: relative;
+        top: 17%;
+    }
+    #backCard {
+        position: relative;
+        top: 2%;
+    }
 }
 @media (max-height: 532px) {
 
