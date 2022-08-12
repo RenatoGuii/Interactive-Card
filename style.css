@@ -6,7 +6,7 @@
     --fontMain: 'Space Grotesk', sans-serif;
 
     /* Colors */
-    --lightGrayishViolet: hsl(270, 3%, 87%);
+    --lightGrayishViolet: hsl(270, 2%, 76%);
     --darkGrayishViolet: hsl(279, 6%, 55%);
     --veryDarkViolet: hsl(278, 68%, 11%);
 
@@ -283,20 +283,36 @@ body {
     /*MOBILE*/
 
 @media (max-width: 714px) {
+    body {
+        overflow: auto;
+    }
     #background {
         order: 1;
-        background: url(images/mobile/bg-main-mobile.png) no-repeat;
+        background: url(images/mobile/bg-main-mobile.png) repeat-x;
         background-size: cover;
         height: 35vh;
         width: 100vw;
     }
     #frontCard {
-        position: relative;
-        top: 17%;
+        top: 18%;
+        left: 34.5%;
+    }
+    .cards {
+        width: 192.66px;
+        height: 107.04px;
     }
     #backCard {
         position: relative;
         top: 2%;
+        left: 41%;
+    }
+    #containerWhite {
+        position: absolute;
+        top: 50%;
+        left: 35%;
+    }
+    #buttonConfirm {
+        margin-bottom: 35px;
     }
 }
 @media (max-height: 532px) {
