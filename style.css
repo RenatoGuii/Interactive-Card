@@ -6,7 +6,7 @@
     --fontMain: 'Space Grotesk', sans-serif;
 
     /* Colors */
-    --lightGrayishViolet: hsl(270, 2%, 76%);
+    --lightGrayishViolet: hsl(270, 3%, 87%);
     --darkGrayishViolet: hsl(279, 6%, 55%);
     --veryDarkViolet: hsl(278, 68%, 11%);
 
@@ -134,15 +134,6 @@ body {
     #backCard #cvcCard {
         padding: 90.948px 41.976px 0 0;
         font-size: 18px;
-    }
-}
-
-@media (max-height: 395px) {
-    #frontCard {
-        top: 77px;
-    }
-    #backCard {
-        top: 235px;
     }
 }
 
@@ -282,7 +273,7 @@ body {
 
     /*MOBILE*/
 
-@media (max-width: 714px) {
+@media (max-width: 714px), (max-height: 532px) {
     body {
         overflow: auto;
     }
@@ -290,31 +281,65 @@ body {
         order: 1;
         background: url(images/mobile/bg-main-mobile.png) repeat-x;
         background-size: cover;
+        min-height: 128.238px;
         height: 35vh;
+        max-height: 159.312px;
         width: 100vw;
     }
-    #frontCard {
-        top: 18%;
-        left: 34.5%;
-    }
     .cards {
-        width: 192.66px;
-        height: 107.04px;
+        min-width: 192.66px;
+        max-width: 206.990px;
+        min-height: 107.04px;
+        max-height: 107.640px;
+        padding: 7.136px;
+    }
+    #frontCard {
+        top: 70px;
+        left: 50%;
+        transform: translate(-55%, -0%);
+        z-index: 1;
+    }
+    #frontCard .balls {
+        margin-bottom: 22px;
+    }
+    #frontCard #whiteBall {
+        height: 21.4px;
+        width: 21.4px;
+    }
+    #frontCard #borderWhiteBall {
+        height: 7.125px;
+        width: 7.125px;
+    }
+    #frontCard #cardNumber {
+        font-size: 8.55px;
+    }
+    #frontCard #name_date {
+        font-size: 6.5px;
     }
     #backCard {
         position: relative;
-        top: 2%;
-        left: 41%;
+        top: 10px;
+        left: 50%;
+        transform: translate(-40%, -0%);
+    }
+    #backCard #cvcCard {
+        padding: 46.384px 21.408px 0 0;
     }
     #containerWhite {
         position: absolute;
-        top: 50%;
-        left: 35%;
+        left: 50%;
+	    top: 340px;
+	    transform: translate(-50%, -50%);
     }
     #buttonConfirm {
         margin-bottom: 35px;
     }
-}
-@media (max-height: 532px) {
 
-}
+
+
+    #completeState {
+        position: absolute;
+	    top: 300px;
+	    left: 50%;
+	    transform: translate(-50%, -50%);
+    }
