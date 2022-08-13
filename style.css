@@ -56,7 +56,7 @@ body {
     background-size: cover;
     top: 20%;
     left: 15%;
-    padding: 1vw; !important
+    padding: 1vw; 
 }
 #frontCard .balls {
     display: flex;
@@ -186,7 +186,7 @@ body {
 #yy {
     margin-right: 10px;
 }
-#cvc {
+#cvcNumber {
     width: 6.5em;
 }
 .mm_yy_cvc::-webkit-outer-spin-button,
@@ -207,7 +207,7 @@ body {
     color: var(--lightGrayishViolet);
     background-color: var(--veryDarkViolet);
     font-family: var(--fontMain);
-    width: 231.5px;
+    width: 232px;
     height: 2.5em;
     border-radius: 5px;
 }
@@ -294,7 +294,7 @@ body {
         padding: 7.136px;
     }
     #frontCard {
-        top: 70px;
+        top: 80px;
         left: 50%;
         transform: translate(-55%, -0%);
         z-index: 1;
@@ -323,7 +323,8 @@ body {
         transform: translate(-40%, -0%);
     }
     #backCard #cvcCard {
-        padding: 46.384px 21.408px 0 0;
+        font-size: 10px;
+        padding: 22% 8% 0 0;
     }
     #containerWhite {
         position: absolute;
@@ -343,3 +344,4 @@ body {
 	    left: 50%;
 	    transform: translate(-50%, -50%);
     }
+}
