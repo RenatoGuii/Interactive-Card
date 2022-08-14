@@ -200,8 +200,8 @@ body {
     color: rgba(255, 0, 0, 0.715);
     font-size: 10px;
 }
-#alertDate {
-    padding-right: 11em;
+#alertDateTxt {
+    padding-right: 11.3em;
 }
 #buttonConfirm {
     color: var(--lightGrayishViolet);
@@ -210,6 +210,7 @@ body {
     width: 232px;
     height: 2.5em;
     border-radius: 5px;
+    margin-top: 0.5em;
 }
 #buttonConfirm:hover {
     background-color: var(--lightGrayishViolet);
@@ -235,6 +236,7 @@ body {
 
 #completeState {
     display: none;
+    padding-top: 15px;
     margin: auto;
     font-family: var(--fontMain);
     width: 280px;
@@ -263,6 +265,7 @@ body {
     width: 21em;
     height: 2.8em;
     border-radius: 5px;
+    margin-bottom: 25px;
 }
 #completeState input:hover {
     background-color: var(--lightGrayishViolet);
