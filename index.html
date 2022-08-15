@@ -21,14 +21,17 @@
                     <div id="borderWhiteBall"></div>
                 </div>
                 <div id="cardNumber">
-                    <h2>0000 0000 0000 0000</h2>
+                    <h2 id="cardNumberToJS">0000 0000 0000 0000</h2>
                 </div>
                 <div id="name_date">
-                    <p>YOUR NAME</p>
-                    <p>00/00</p>
+                    <p id="yourName">YOUR NAME</p>
+                    <div class="date">
+                        <p id="expDateMM">00</p>
+                        <p id="bar">/</p>
+                        <p id="expDateYY">00</p>
+                    </div>
             </div>
         </div>
-
         <div id="backCard" class="cards">
             <p id="cvcCard">000</p>
         </div>
@@ -47,10 +50,6 @@
             <input class="mm_yy_cvc" type="number" name="form" placeholder="YY" id="yy">
 
             <input class="mm_yy_cvc" type="number" name="form" id="cvcNumber" placeholder="e.g. 123">
-            <div class="alert">
-                <span id="alertDateTxt"></span>
-                <span id="alertCvcTxt"></span>
-            </div>
         </form>
 
         <div>
