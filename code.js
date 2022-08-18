@@ -16,13 +16,16 @@ function buttonConfirm () {
     if (cardHolderName.value.length != 0 && cardNumber.value.length == 16 && Number(cardNumber.value) > 0 && month.value.length == 2 && Number(month.value) >=1 && Number(month.value) <= 12 && year.value.length == 2 && year.value >= data && cvc.value.length == 3) {
         let form = document.querySelector ("#containerWhite")
         let complete = document.querySelector("#completeState")
+        let bridgeNumberCard = (cardNumber.value).replace(/.{4}/g, '$&-');
+        let finalNumberCard = bridgeNumberCard.substring(0, bridgeNumberCard.length - 1);
         form.style.display = "none";
         complete.style.display = "block";
         yourNameTXT.innerHTML = `${(cardHolderName.value).toUpperCase()}`
-        numberCardTXT.innerHTML = `${(cardNumber.value)}`
+        numberCardTXT.innerHTML = `${(finalNumberCard)}`
         mmCardTXT.innerHTML = `${(month.value).toUpperCase()}`
         yyCardTXT.innerHTML = `${(year.value).toUpperCase()}`
         cvcCardTXT.innerHTML = `${(cvc.value).toUpperCase()}`
+        console.log (resultNumberCard.value)
     } else {
         window.alert (" [ERRO] Check your data! \n - No blank spaces allowed \n - Card Number must be 16 digits \n - Month and Year must be 2 digits \n - CVC must be 3 digits ")
     }

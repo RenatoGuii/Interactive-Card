@@ -278,10 +278,6 @@ body {
         width: 100vw;
     }
     .cards {
-        min-width: 192.66px;
-        max-width: 206.990px;
-        min-height: 107.04px;
-        max-height: 107.640px;
         padding: 7.136px;
     }
     #frontCard {
@@ -330,8 +326,6 @@ body {
         margin-bottom: 35px;
     }
 
-
-
     #completeState {
         position: absolute;
 	    top: 300px;
@@ -339,3 +333,4 @@ body {
 	    transform: translate(-50%, -50%);
     }
 }
+
