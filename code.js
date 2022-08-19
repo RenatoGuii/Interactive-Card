@@ -16,7 +16,7 @@ function buttonConfirm () {
     if (cardHolderName.value.length != 0 && cardNumber.value.length == 16 && Number(cardNumber.value) > 0 && month.value.length == 2 && Number(month.value) >=1 && Number(month.value) <= 12 && year.value.length == 2 && year.value >= data && cvc.value.length == 3) {
         let form = document.querySelector ("#containerWhite")
         let complete = document.querySelector("#completeState")
-        let bridgeNumberCard = (cardNumber.value).replace(/.{4}/g, '$&-');
+        let bridgeNumberCard = (cardNumber.value).replace(/.{4}/g, '$& ');
         let finalNumberCard = bridgeNumberCard.substring(0, bridgeNumberCard.length - 1);
         form.style.display = "none";
         complete.style.display = "block";
