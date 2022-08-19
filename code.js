@@ -9,6 +9,7 @@ let mmCardTXT = document.querySelector ("#expDateMM")
 let yyCardTXT = document.querySelector ("#expDateYY")
 let cvcCardTXT = document.querySelector ("#cvcCard")
 
+              /*AJEITAR FUNÇÃO DOS ALERTS*/
 
 function buttonConfirm () {
     data = new Date().getFullYear().toString().substr(-2);

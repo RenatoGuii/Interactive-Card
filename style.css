@@ -169,7 +169,7 @@ body {
 }
 .nameAndNumber {
     width: 17em;
-    margin-bottom: 17px;
+    margin-bottom: 10px;
 }
 #cardNumberTxt::-webkit-outer-spin-button,
 #cardNumberTxt::-webkit-inner-spin-button {
@@ -206,6 +206,20 @@ body {
 } 
 
 
+    /*Alerts*/
+
+#containerWhite .alerts {
+    display: none;
+    color: red;   
+}
+#containerWhite #alertCardDate {
+    margin-top: 5px;
+}
+#containerWhite #alertCvc {
+    position: absolute;
+    top: 227px;
+    left: 135px;
+}
 
     /*Keep Card Position*/
     
@@ -319,7 +333,7 @@ body {
     #containerWhite {
         position: absolute;
         left: 50%;
-	    top: 340px;
+	    top: 360px;
 	    transform: translate(-50%, -50%);
     }
     #buttonConfirm {

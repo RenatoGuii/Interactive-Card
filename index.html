@@ -41,15 +41,18 @@
         <form id="containerForm">
             <p>CARDHOLDER NAME</p>
             <input class="nameAndNumber" type="text" name="form" id="cardHolderTxt" placeholder="e.g. Renato Guimarães">
+            <p class="alerts" id="alertCardName">No blank spaces</p>
 
             <p>CARD NUMBER</p>
             <input class="nameAndNumber" type="number" name="form" id="cardNumberTxt" placeholder="e.g. 1234 5678 9123 0000">
+            <p class="alerts" id="alertCardNumber">No blank spaces</p>
 
             <p>EXP. DATE (MM/YY) &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp CVC</p> 
             <input  class="mm_yy_cvc" type="number" name="form" placeholder="MM" id="mm">
             <input class="mm_yy_cvc" type="number" name="form" placeholder="YY" id="yy">
-
             <input class="mm_yy_cvc" type="number" name="form" id="cvcNumber" placeholder="e.g. 123">
+            <p class="alerts" id="alertCardDate">No blank spaces</p>
+            <p class="alerts" id="alertCvc">No blank spaces</p>
         </form>
 
         <div>
