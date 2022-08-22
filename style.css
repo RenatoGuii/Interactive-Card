@@ -144,7 +144,7 @@ body {
     cursor: pointer;
 }
 .containerForm {
-    width: 233;
+    width: 232;
 }
 .containerForm p {
     color: var(--veryDarkViolet);
@@ -171,7 +171,7 @@ body {
     color: var(--lightGrayishViolet);
 }
 .nameAndNumber {
-    width: 17em;
+    width: 16.8em;
     margin-bottom: 10px;
 }
 #cardNumberTxt::-webkit-outer-spin-button,
@@ -181,20 +181,18 @@ body {
 #mm, #yy {
     width: 45px;
 }
-#mm {
-    margin-right: 5px;
-}
-#yy {
-    margin-right: 10px;
-}
 .mm_yy_cvc::-webkit-outer-spin-button,
 .mm_yy_cvc::-webkit-inner-spin-button {
     -webkit-appearance: none;
 }
+#yearDiv {
+    position: absolute;
+    margin: -54px 0 0 62px;
+}
 #cvcNumber {
     position: absolute;
     width: 6.5em;
-    margin: -46px 0 0 134px;
+    margin: -55px 0 0 134px;
 }
 #buttonConfirm {
     color: var(--lightGrayishViolet);
@@ -212,22 +210,19 @@ body {
     /*Alerts*/
 
 .alerts {
-    visibility: ;
+    visibility: hidden;
 }
 .form-control_error input {
     outline: 1px solid red;
-    border: 1px solid red;
+    border-color: red;
 }
 .form-control_error .alerts {
     visibility: visible;
     color: red;
 }
-#containerWhite #alertCardDate {
-    margin-top: 5px;  
-}
 #containerWhite #alertCvc {
     position: absolute;
-    margin: -20.7px 0 0 134px;
+    margin: -20.8px 0 0 124px;
 }
 
     /*Keep Card Position*/
@@ -350,7 +345,7 @@ body {
     #cvcNumber {
         position: absolute;
         width: 6.5em;
-        top: 189.5px;
+        top: 188.5px;
         left: 133px;
         margin: 0;
     }

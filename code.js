@@ -63,26 +63,41 @@ function checkInputs () {
   let cvcValue = cvc.value
 
   if (cardHolderNameValue === "") {
-    setErrorFor ("No blank spaces")
+    setErrorFor (cardHolderName, "No blank spaces")
   }
 
-  if ((cardNumberValue).length == 0 && cardHolderName < 16) {
-    setErrorFor ("No blank spaces &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Must have 16 digits")
-  } else if (cardNumberValue < 16) {
-    setErrorFor ("Must have 16 digits")
-  } else if (cardNumberValue.length == 0) {
-    setErrorFor ("No blank spaces")
+  if ((cardNumberValue).length == 0) {
+    setErrorFor (cardNumber, "No blank spaces &nbsp&nbsp&nbsp&nbsp&nbsp Must have 16 digits")
+  } else if ((cardNumberValue).length != 16 && (cardNumberValue).length != 0) {
+    setErrorFor (cardNumber, "Must have 16 digits")
+  }
+
+  if ((monthValue).length == 0) {
+    setErrorFor (month, "Must have 2 digits")
+  }
+
+  if ((yearValue).length == 0) {
+    setErrorFor (year , "Must have 2 digits")
+  }
+
+  if ((cvcValue).length == 0) {
+    setErrorFor (cvc, "Must have 3 digits")
   }
 }
 
-function setErrorFor (message) {
-    let formControl = document.querySelector(".form-control")
-    const alert = formControl.querySelector(".alerts")
+function setErrorFor (input, message) {
+    let formControl = input.parentNode
 
-    alert.innerHTML = message
+    if (input == month || input == year) {
+      let alertDate = document.querySelector("#alertDate")
+      alertDate.innerHTML = message
+    } else {
+    const alert = formControl.querySelector(".alerts")
+      alert.innerHTML = message
+    }
+
     formControl.classList.remove("form-control") 
     formControl.classList.add("form-control_error")
-    console.log (formControl.ClassName)
 }
 
 
