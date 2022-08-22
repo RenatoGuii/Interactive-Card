@@ -143,6 +143,9 @@ body {
 #containerWhite input:hover {
     cursor: pointer;
 }
+.containerForm {
+    width: 233;
+}
 .containerForm p {
     color: var(--veryDarkViolet);
     font-size: 10px;
@@ -158,9 +161,6 @@ body {
     border-radius: 5px;
     padding: 7px 0 7px 10px;
     font-size: 13px;
-}
-.alerts {
-    visibility: hidden;
 }
 .containerForm input:focus {
     box-shadow: 0 0 0 0;
@@ -187,12 +187,14 @@ body {
 #yy {
     margin-right: 10px;
 }
-#cvcNumber {
-    width: 6.5em;
-}
 .mm_yy_cvc::-webkit-outer-spin-button,
 .mm_yy_cvc::-webkit-inner-spin-button {
     -webkit-appearance: none;
+}
+#cvcNumber {
+    position: absolute;
+    width: 6.5em;
+    margin: -46px 0 0 134px;
 }
 #buttonConfirm {
     color: var(--lightGrayishViolet);
@@ -201,21 +203,22 @@ body {
     width: 232px;
     height: 2.5em;
     border-radius: 5px;
-    margin-top: 0.5em;
 }
 #buttonConfirm:hover {
     background-color: var(--lightGrayishViolet);
     color: var(--veryDarkViolet);
 } 
 
-
     /*Alerts*/
 
-.containerForm .nameAndNumber.error {
+.alerts {
+    visibility: ;
+}
+.form-control_error input {
     outline: 1px solid red;
     border: 1px solid red;
 }
-.containerForm .alerts.error {
+.form-control_error .alerts {
     visibility: visible;
     color: red;
 }
@@ -224,8 +227,7 @@ body {
 }
 #containerWhite #alertCvc {
     position: absolute;
-    top: 227px;
-    left: 135px;
+    margin: -20.7px 0 0 134px;
 }
 
     /*Keep Card Position*/
@@ -299,13 +301,15 @@ body {
         width: 100vw;
     }
     .cards {
-        padding: 7.136px;
+        max-width: 185px;
+        max-height: 101px;
     }
     #frontCard {
         top: 80px;
         left: 50%;
         transform: translate(-55%, -0%);
         z-index: 1;
+        padding: 6.552px;
     }
     #frontCard .balls {
         margin-bottom: 22px;
@@ -335,13 +339,20 @@ body {
     }
     #backCard #cvcCard {
         font-size: 10px;
-        padding: 22% 8% 0 0;
+        padding: 24% 10% 0 0;
     }
     #containerWhite {
         position: absolute;
         left: 50%;
 	    top: 360px;
 	    transform: translate(-50%, -50%);
+    }
+    #cvcNumber {
+        position: absolute;
+        width: 6.5em;
+        top: 189.5px;
+        left: 133px;
+        margin: 0;
     }
     #buttonConfirm {
         margin-bottom: 35px;

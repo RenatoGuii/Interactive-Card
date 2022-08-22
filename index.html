@@ -39,20 +39,31 @@
 
     <section id="containerWhite">
         <form class="containerForm">
-            <p>CARDHOLDER NAME</p>
-            <input class="nameAndNumber" type="text" name="form" id="cardHolderTxt" placeholder="e.g. Renato Guimarães">
-            <p class="alerts" id="alertCardName">No blank spaces</p>
 
-            <p>CARD NUMBER</p>
-            <input class="nameAndNumber" type="number" name="form" id="cardNumberTxt" placeholder="e.g. 1234 5678 9123 0000">
-            <p class="alerts" id="alertCardNumber">No blank spaces</p>
+            <div class="form-control">
+                <p>CARDHOLDER NAME</p>
+                <input class="nameAndNumber" type="text" name="form" id="cardHolderTxt" placeholder="e.g. Renato Guimarães">
+                <p class="alerts" id="alertCardName">error menssage</p>
+            </div>
+
+            <div class="form-control">
+                <p>CARD NUMBER</p>
+                <input class="nameAndNumber" type="number" name="form" id="cardNumberTxt" placeholder="e.g. 1234 5678 9123 0000">
+                <p class="alerts" id="alertCardNumber">error menssage</p>
+            </div>
 
             <p>EXP. DATE (MM/YY) &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp CVC</p> 
-            <input  class="mm_yy_cvc" type="number" name="form" placeholder="MM" id="mm">
-            <input class="mm_yy_cvc" type="number" name="form" placeholder="YY" id="yy">
-            <input class="mm_yy_cvc" type="number" name="form" id="cvcNumber" placeholder="e.g. 123">
-            <p class="alerts" id="alertCardDate">No blank spaces</p>
-            <p class="alerts" id="alertCvc">No blank spaces</p>
+
+            <div class="form-control" id="expireDiv">
+                <input  class="mm_yy_cvc" type="number" name="form" placeholder="MM" id="mm">
+                <input class="mm_yy_cvc" type="number" name="form" placeholder="YY" id="yy">
+                <p class="alerts" id="alertCardDate">error menssage</p>
+            </div>
+
+            <div class="form-control" id="cvcDiv">
+                <input class="mm_yy_cvc" type="number" name="form" id="cvcNumber" placeholder="e.g. 123">
+                <p class="alerts" id="alertCvc">error menssage</p>
+            </div>
         </form>
 
         <div>

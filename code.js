@@ -1,15 +1,19 @@
+              /* Inputs */
+
 let cardHolderName = document.querySelector("#cardHolderTxt")
 let cardNumber = document.querySelector("#cardNumberTxt")
 let month = document.querySelector("#mm")
 let year = document.querySelector("#yy")
 let cvc = document.querySelector("#cvcNumber")
+
+              /* Card Texts */
+
 let yourNameTXT = document.querySelector ("#yourName")
 let numberCardTXT = document.querySelector ("#cardNumberToJS")
 let mmCardTXT = document.querySelector ("#expDateMM")
 let yyCardTXT = document.querySelector ("#expDateYY")
 let cvcCardTXT = document.querySelector ("#cvcCard")
 
-              /*AJEITAR FUNÇÃO DOS ALERTS*/
 
 function buttonConfirm () {
     data = new Date().getFullYear().toString().substr(-2);
@@ -28,7 +32,7 @@ function buttonConfirm () {
         cvcCardTXT.innerHTML = `${(cvc.value).toUpperCase()}`
         console.log (resultNumberCard.value)
     } else {
-        window.alert (" [ERRO] Check your data! \n - No blank spaces allowed \n - Card Number must be 16 digits \n - Month and Year must be 2 digits \n - CVC must be 3 digits ")
+        checkInputs ()
     }
 }
 
@@ -49,8 +53,40 @@ function buttonContinue () {
     cvcCardTXT.innerHTML = "000"
 }
 
+              /* Alerts Config */
 
-/*Digits limitation*/ 
+function checkInputs () {
+  let cardHolderNameValue = cardHolderName.value
+  let cardNumberValue = cardNumber.value
+  let monthValue = month.value
+  let yearValue = year.value
+  let cvcValue = cvc.value
+
+  if (cardHolderNameValue === "") {
+    setErrorFor ("No blank spaces")
+  }
+
+  if ((cardNumberValue).length == 0 && cardHolderName < 16) {
+    setErrorFor ("No blank spaces &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Must have 16 digits")
+  } else if (cardNumberValue < 16) {
+    setErrorFor ("Must have 16 digits")
+  } else if (cardNumberValue.length == 0) {
+    setErrorFor ("No blank spaces")
+  }
+}
+
+function setErrorFor (message) {
+    let formControl = document.querySelector(".form-control")
+    const alert = formControl.querySelector(".alerts")
+
+    alert.innerHTML = message
+    formControl.classList.remove("form-control") 
+    formControl.classList.add("form-control_error")
+    console.log (formControl.ClassName)
+}
+
+
+              /*Digits limitation*/ 
 
 cardHolderName.addEventListener("keypress", function(e) {
     var keyCode = (e.keyCode ? e.keyCode : e.which);
