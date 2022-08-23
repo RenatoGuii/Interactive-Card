@@ -220,6 +220,10 @@ body {
     visibility: visible;
     color: red;
 }
+.form-control_success input {
+    outline: none;
+    border-color: var(--lightGrayishViolet);
+}
 #containerWhite #alertCvc {
     position: absolute;
     margin: -20.8px 0 0 124px;

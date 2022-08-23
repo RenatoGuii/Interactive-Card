@@ -21,7 +21,7 @@ function buttonConfirm () {
     if (cardHolderName.value.length != 0 && cardNumber.value.length == 16 && Number(cardNumber.value) > 0 && month.value.length == 2 && Number(month.value) >=1 && Number(month.value) <= 12 && year.value.length == 2 && year.value >= data && cvc.value.length == 3) {
         let form = document.querySelector ("#containerWhite")
         let complete = document.querySelector("#completeState")
-        let bridgeNumberCard = (cardNumber.value).replace(/.{4}/g, '$& ');
+        const bridgeNumberCard = (cardNumber.value).replace(/.{4}/g, '$& ');
         let finalNumberCard = bridgeNumberCard.substring(0, bridgeNumberCard.length - 1);
         form.style.display = "none";
         complete.style.display = "block";
@@ -39,6 +39,7 @@ function buttonConfirm () {
 function buttonContinue () {
     let form = document.querySelector ("#containerWhite")
     let complete = document.querySelector("#completeState")
+    let inputs = document.querySelector(".form-control_error")
     form.style.display = "block";
     complete.style.display = "none";
     cardHolderName.value = null
@@ -51,7 +52,10 @@ function buttonContinue () {
     mmCardTXT.innerHTML = "00"
     yyCardTXT.innerHTML = "00"
     cvcCardTXT.innerHTML = "000"
-}
+    inputs.style.borderColor = "hsl(270, 3%, 87%)"
+    alert.style.visibility = "hidden" 
+
+  }
 
               /* Alerts Config */
 
@@ -64,40 +68,62 @@ function checkInputs () {
 
   if (cardHolderNameValue === "") {
     setErrorFor (cardHolderName, "No blank spaces")
+  } else {
+    setSuccessFor (cardHolderName)
   }
 
   if ((cardNumberValue).length == 0) {
     setErrorFor (cardNumber, "No blank spaces &nbsp&nbsp&nbsp&nbsp&nbsp Must have 16 digits")
   } else if ((cardNumberValue).length != 16 && (cardNumberValue).length != 0) {
     setErrorFor (cardNumber, "Must have 16 digits")
+  } else {
+    setSuccessFor (cardNumber)
   }
 
   if ((monthValue).length == 0) {
     setErrorFor (month, "Must have 2 digits")
-  }
+  } else {
+    setSuccessFor (month)
+  } 
 
   if ((yearValue).length == 0) {
     setErrorFor (year , "Must have 2 digits")
+  } else {
+    setSuccessFor (year)
   }
 
   if ((cvcValue).length == 0) {
     setErrorFor (cvc, "Must have 3 digits")
+  } else {
+    setSuccessFor (cvc)
   }
 }
 
 function setErrorFor (input, message) {
-    let formControl = input.parentNode
+    
 
     if (input == month || input == year) {
+      const formControl = input.parentNode
       let alertDate = document.querySelector("#alertDate")
       alertDate.innerHTML = message
+      formControl.classList.remove("form-control") 
+      formControl.classList.add("form-control_error")
     } else {
-    const alert = formControl.querySelector(".alerts")
+      const formControl = input.parentNode
+      const alert = formControl.querySelector(".alerts")
       alert.innerHTML = message
+      formControl.classList.remove("form-control") 
+      formControl.classList.add("form-control_error")
     }
+}
 
-    formControl.classList.remove("form-control") 
-    formControl.classList.add("form-control_error")
+function setSuccessFor (input) {
+  const formControl = input.parentNode
+  const alert = formControl.querySelector(".alerts")
+
+  alert.style.visibility = "hidden" 
+  formControl.classList.remove("form-control")
+  formControl.classList.add("form-control_success")
 }
 
 
