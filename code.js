@@ -1,3 +1,13 @@
+              /*
+                  PROBLEMAS A RESOLVER
+                  - Testar Kitten nos alerts que não repetem
+                  - Limpar os alerts e as bordas após o reset
+                  - Colocar espaço nos carcateres do CardNumber
+                  - Colocar o alert message do Year
+              */
+              
+              
+              
               /* Inputs */
 
 let cardHolderName = document.querySelector("#cardHolderTxt")
@@ -39,7 +49,6 @@ function buttonConfirm () {
 function buttonContinue () {
     let form = document.querySelector ("#containerWhite")
     let complete = document.querySelector("#completeState")
-    let inputs = document.querySelector(".form-control_error")
     form.style.display = "block";
     complete.style.display = "none";
     cardHolderName.value = null
@@ -52,8 +61,9 @@ function buttonContinue () {
     mmCardTXT.innerHTML = "00"
     yyCardTXT.innerHTML = "00"
     cvcCardTXT.innerHTML = "000"
-    inputs.style.borderColor = "hsl(270, 3%, 87%)"
-    alert.style.visibility = "hidden" 
+    formControl.classList.remove("form-control-error")
+    formControl.classList.add("form-control") 
+    alerts.style.visibility = "hidden" 
 
   }
 
@@ -103,14 +113,14 @@ function setErrorFor (input, message) {
     
 
     if (input == month || input == year) {
-      const formControl = input.parentNode
+      var formControl = input.parentNode
       let alertDate = document.querySelector("#alertDate")
       alertDate.innerHTML = message
       formControl.classList.remove("form-control") 
       formControl.classList.add("form-control_error")
     } else {
-      const formControl = input.parentNode
-      const alert = formControl.querySelector(".alerts")
+      var formControl = input.parentNode
+      var alert = formControl.querySelector(".alerts")
       alert.innerHTML = message
       formControl.classList.remove("form-control") 
       formControl.classList.add("form-control_error")
