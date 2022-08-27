@@ -181,8 +181,10 @@ body {
 #mm, #yy {
     width: 45px;
 }
-.mm_yy_cvc::-webkit-outer-spin-button,
-.mm_yy_cvc::-webkit-inner-spin-button {
+.mm_yy::-webkit-outer-spin-button,
+.mm_yy::-webkit-inner-spin-button,
+#cvcNumber::-webkit-outer-spin-button,
+#cvcNumber::-webkit-inner-spin-button {
     -webkit-appearance: none;
 }
 #yearDiv {
@@ -224,9 +226,16 @@ body {
     outline: none;
     border-color: var(--lightGrayishViolet);
 }
+.form-control_success .alerts {
+    visibility: hidden;
+}
 #containerWhite #alertCvc {
     position: absolute;
     margin: -20.8px 0 0 124px;
+}
+#alertYearDate {
+    position: absolute;
+    margin: 0px 0 0 -62px;
 }
 
     /*Keep Card Position*/

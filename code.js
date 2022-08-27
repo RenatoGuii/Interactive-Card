@@ -1,14 +1,4 @@
-              /*
-                  PROBLEMAS A RESOLVER
-                  - Testar Kitten nos alerts que não repetem
-                  - Limpar os alerts e as bordas após o reset
-                  - Colocar espaço nos carcateres do CardNumber
-                  - Colocar o alert message do Year
-              */
-              
-              
-              
-              /* Inputs */
+               /* Inputs */
 
 let cardHolderName = document.querySelector("#cardHolderTxt")
 let cardNumber = document.querySelector("#cardNumberTxt")
@@ -28,53 +18,35 @@ let cvcCardTXT = document.querySelector ("#cvcCard")
 function buttonConfirm () {
     data = new Date().getFullYear().toString().substr(-2);
     
-    if (cardHolderName.value.length != 0 && cardNumber.value.length == 16 && Number(cardNumber.value) > 0 && month.value.length == 2 && Number(month.value) >=1 && Number(month.value) <= 12 && year.value.length == 2 && year.value >= data && cvc.value.length == 3) {
+    if (cardHolderName.value.length != 0 && cardNumber.value.length == 19 && month.value.length == 2 && Number(month.value) >=1 && Number(month.value) <= 12 && year.value.length == 2 && year.value >= data && cvc.value.length == 3) {
         let form = document.querySelector ("#containerWhite")
         let complete = document.querySelector("#completeState")
-        const bridgeNumberCard = (cardNumber.value).replace(/.{4}/g, '$& ');
-        let finalNumberCard = bridgeNumberCard.substring(0, bridgeNumberCard.length - 1);
         form.style.display = "none";
         complete.style.display = "block";
         yourNameTXT.innerHTML = `${(cardHolderName.value).toUpperCase()}`
-        numberCardTXT.innerHTML = `${(finalNumberCard)}`
+        numberCardTXT.innerHTML = `${(cardNumber.value)}`
         mmCardTXT.innerHTML = `${(month.value).toUpperCase()}`
         yyCardTXT.innerHTML = `${(year.value).toUpperCase()}`
         cvcCardTXT.innerHTML = `${(cvc.value).toUpperCase()}`
-        console.log (resultNumberCard.value)
     } else {
-        checkInputs ()
+      window.alert ("[Don't forget to check your data] \n - Month must be between 1 and 12 \n - Year cannot be less than the current year")
+      checkInputs ()
+      var intervalo = setInterval (checkInputs, 500) 
     }
 }
-
+    
 function buttonContinue () {
-    let form = document.querySelector ("#containerWhite")
-    let complete = document.querySelector("#completeState")
-    form.style.display = "block";
-    complete.style.display = "none";
-    cardHolderName.value = null
-    cardNumber.value = null
-    month.value = null
-    year.value = null
-    cvc.value = null
-    yourNameTXT.innerHTML = "YOUR NAME"
-    numberCardTXT.innerHTML = "0000 0000 0000 0000"
-    mmCardTXT.innerHTML = "00"
-    yyCardTXT.innerHTML = "00"
-    cvcCardTXT.innerHTML = "000"
-    formControl.classList.remove("form-control-error")
-    formControl.classList.add("form-control") 
-    alerts.style.visibility = "hidden" 
-
+    location.reload()
   }
 
               /* Alerts Config */
 
 function checkInputs () {
-  let cardHolderNameValue = cardHolderName.value
-  let cardNumberValue = cardNumber.value
-  let monthValue = month.value
-  let yearValue = year.value
-  let cvcValue = cvc.value
+  const cardHolderNameValue = cardHolderName.value
+  const cardNumberValue = cardNumber.value
+  const monthValue = month.value
+  const yearValue = year.value
+  const cvcValue = cvc.value
 
   if (cardHolderNameValue === "") {
     setErrorFor (cardHolderName, "No blank spaces")
@@ -84,25 +56,25 @@ function checkInputs () {
 
   if ((cardNumberValue).length == 0) {
     setErrorFor (cardNumber, "No blank spaces &nbsp&nbsp&nbsp&nbsp&nbsp Must have 16 digits")
-  } else if ((cardNumberValue).length != 16 && (cardNumberValue).length != 0) {
+  } else if ((cardNumberValue).length != 19 && (cardNumberValue).length != 0) {
     setErrorFor (cardNumber, "Must have 16 digits")
   } else {
     setSuccessFor (cardNumber)
   }
 
-  if ((monthValue).length == 0) {
+  if ((monthValue).length != 2) {
     setErrorFor (month, "Must have 2 digits")
   } else {
     setSuccessFor (month)
   } 
 
-  if ((yearValue).length == 0) {
+  if ((yearValue).length != 2) {
     setErrorFor (year , "Must have 2 digits")
   } else {
     setSuccessFor (year)
   }
 
-  if ((cvcValue).length == 0) {
+  if ((cvcValue).length != 3) {
     setErrorFor (cvc, "Must have 3 digits")
   } else {
     setSuccessFor (cvc)
@@ -110,32 +82,31 @@ function checkInputs () {
 }
 
 function setErrorFor (input, message) {
-    
-
-    if (input == month || input == year) {
-      var formControl = input.parentNode
-      let alertDate = document.querySelector("#alertDate")
-      alertDate.innerHTML = message
-      formControl.classList.remove("form-control") 
-      formControl.classList.add("form-control_error")
-    } else {
-      var formControl = input.parentNode
-      var alert = formControl.querySelector(".alerts")
-      alert.innerHTML = message
-      formControl.classList.remove("form-control") 
-      formControl.classList.add("form-control_error")
-    }
+  const formControl = input.parentNode
+  const alert = formControl.querySelector(".alerts")
+  alert.innerHTML = message
+  formControl.classList.remove("form-control") 
+  formControl.classList.remove("form-control_success")
+  formControl.classList.add("form-control_error")
 }
 
 function setSuccessFor (input) {
   const formControl = input.parentNode
   const alert = formControl.querySelector(".alerts")
-
-  alert.style.visibility = "hidden" 
   formControl.classList.remove("form-control")
+  formControl.classList.remove("form-control_error")
   formControl.classList.add("form-control_success")
 }
 
+              /* Number Card formatting */
+
+cardNumber.addEventListener('keypress', () => {
+  let cardNumberLength = cardNumber.value.length
+
+  if (cardNumberLength === 4 || cardNumberLength === 9 || cardNumberLength === 14) {
+    cardNumber.value += ' '
+  }
+})
 
               /*Digits limitation*/ 
 

@@ -42,30 +42,30 @@
 
             <div class="form-control">
                 <p>CARDHOLDER NAME</p>
-                <input class="nameAndNumber" type="text" name="form" id="cardHolderTxt" placeholder="e.g. Renato Guimarães">
+                <input autocomplete="off" class="nameAndNumber" type="text" name="form" id="cardHolderTxt" placeholder="e.g. Renato Guimarães">
                 <p class="alerts" id="alertCardName">error menssage</p>
             </div>
 
             <div class="form-control">
                 <p>CARD NUMBER</p>
-                <input class="nameAndNumber" type="number" name="form" id="cardNumberTxt" placeholder="e.g. 1234 5678 9123 0000">
+                <input class="nameAndNumber" type="text" name="form" id="cardNumberTxt" placeholder="e.g. 1234 5678 9123 0000" maxlength="19">
                 <p class="alerts" id="alertCardNumber">error menssage</p>
             </div>
 
             <p>EXP. DATE (MM/YY) &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp CVC</p> 
 
             <div class="form-control" id="monthDiv">
-                <input  class="mm_yy_cvc" type="number" name="form" placeholder="MM" id="mm">
-                <p class="alerts" id="alertDate">error menssage</p>
+                <input  class="mm_yy" type="number" name="form" placeholder="MM" id="mm">
+                <p class="alerts" id="alertMonthDate">error menssage</p>
             </div>
 
             <div class="form-control" id="yearDiv">
-                <input class="mm_yy_cvc" type="number" name="form" placeholder="YY" id="yy">
-              <!--  <p class="alerts" id="alertYearDate">error menssage</p> -->
+                <input class="mm_yy" type="number" name="form" placeholder="YY" id="yy">
+                <p class="alerts" id="alertYearDate">error menssage</p>
             </div>
 
             <div class="form-control" id="cvcDiv">
-                <input class="mm_yy_cvc" type="number" name="form" id="cvcNumber" placeholder="e.g. 123">
+                <input autocomplete="off" type="number" name="form" id="cvcNumber" placeholder="e.g. 123">
                 <p class="alerts" id="alertCvc">error menssage</p>
             </div>
         </form>
